@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.navigationdialog.MainFragment"
+        android:label="MainFragment">
+        <action
+            android:id="@+id/action_mainFragment_to_secondFragment"
+            app:destination="@id/secondFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="com.example.navigationdialog.SecondFragment"
+        android:label="SecondFragment" />
+
+    <dialog_fragment
+        android:id="@+id/simpleDialog"
+        android:name="com.example.navigationdialog.SimpleDialog"
+        android:label="SimpleDialog">
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="message"
+            app:argType="string" />
+        <argument
+            android:name="requestCode"
+            app:argType="integer" />
+    </dialog_fragment>
+    <action
+        android:id="@+id/action_global_simpleDialog"
+        app:destination="@id/simpleDialog" />
+</navigation>
